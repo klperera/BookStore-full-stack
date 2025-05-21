@@ -80,11 +80,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\BookStore-full-stack\\BookStore.API\\BookStore.API.csproj",
+      "projectUniqueName": "d:\\Projects\\BookStore-full-stack\\BookStore.API\\BookStore.API.csproj",
       "projectName": "BookStore.API",
-      "projectPath": "D:\\Projects\\BookStore-full-stack\\BookStore.API\\BookStore.API.csproj",
+      "projectPath": "d:\\Projects\\BookStore-full-stack\\BookStore.API\\BookStore.API.csproj",
       "packagesPath": "C:\\Users\\Heshani\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\BookStore-full-stack\\BookStore.API\\obj\\",
+      "outputPath": "d:\\Projects\\BookStore-full-stack\\BookStore.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Heshani\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -144,5 +144,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
+    }
+  ]
 }
