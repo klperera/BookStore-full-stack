@@ -3,12 +3,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BookStore.API.Models;
 
-public class Book
+public class Book(int Id, string Title, string Author, string Isbn, DateOnly date)
 {
-    public int Id { get; set; }
-    public string Title { get; set; } = string.Empty;
-    public string Author { get; set; } = string.Empty;
-    public string Isbn { get; set; } = string.Empty;
-    public DateOnly PublicationDate { get; set; }
-
+    public int Id { get; set; } = Id;
+    public string Title { get; set; } = Title;
+    public string Author { get; set; } = Author;
+    public string Isbn { get; set; } = Isbn;
+    public DateOnly PublicationDate { get; set; } = date;
 }
