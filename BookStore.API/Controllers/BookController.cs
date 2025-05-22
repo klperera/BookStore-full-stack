@@ -4,13 +4,13 @@ using BookStore.API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualBasic;
 
-namespace BookStore.API.Controller
+namespace BookStore.API.Controllers
 {
     [Route("api/books")]
     [ApiController]
     public class BookController : ControllerBase
     {
-        private List<Book> books = [
+        private static List<Book> books = [
             new Book(
                 Id: 1,
                 Title: "hii",
@@ -26,53 +26,49 @@ namespace BookStore.API.Controller
             return Ok(books);
         }
 
-        [HttpGet]
-        [Route("/{id}")]
+        [HttpGet("{id}")]
         public IActionResult GetById([FromRoute] int id)
         {
-            int index = books.FindIndex(book => book.Id == id);
-            return index == -1 ? NotFound("Book not found") : Ok(books[index]);
+            Book? book = books.FirstOrDefault(book => book.Id == id);
+            return book == null ? NotFound("Book not found") : Ok(book);
         }
 
         [HttpPost]
         public IActionResult CreateBook([FromBody] CreateBookDTO newBook)
         {
-            Book? book = books.Find(book => book.Title == newBook.Title);
+            Book? book = books.FirstOrDefault(book => book.Title == newBook.Title);
             if (book != null)
             {
-                return Conflict("Book is already ");
+                return Conflict("Book already exists.");
             }
-            newBook.Id = books.Count + 1;
-            books.Add(book = new Book(
-                newBook.Id,
+            book = new Book(
+                books.Count + 1,
                 newBook.Title,
                 newBook.Author,
                 newBook.Isbn,
                 newBook.PublicationDate
-            ));
+            );
+            books.Add(book);
             return CreatedAtAction(nameof(GetById), new { id = book.Id }, book);
         }
-        [HttpPut]
-        [Route("/{id}")]
+        [HttpPut("{id}")]
         public IActionResult UpdateBook([FromRoute] int id, [FromBody] UpdateBookDTO updateBook)
         {
-            int index = books.FindIndex(book => book.Id == id);
-            if (index == -1) return NotFound("Book not found.");
-            Book book = books[index];
-            if (updateBook.Title != null) book.Title = updateBook.Title;
-            if (updateBook.Author != null) book.Author = updateBook.Author;
-            if (updateBook.Isbn != null) book.Isbn = updateBook.Isbn;
+            Book? book = books.FirstOrDefault(book => book.Id == id);
+            if (book == null) return NotFound("Book not found.");
+            if (updateBook.Title != "") book.Title = updateBook.Title;
+            if (updateBook.Author != "") book.Author = updateBook.Author;
+            if (updateBook.Isbn != "") book.Isbn = updateBook.Isbn;
 
             return Ok(book);
         }
 
-        [HttpDelete]
-        [Route("/{id}")]
+        [HttpDelete("{id}")]
         public IActionResult DeleteBook([FromRoute] int id)
         {
-            int index = books.FindIndex(book => book.Id == id);
-            if (index == -1) return NotFound("Book not found.");
-            books.RemoveAt(index);
+            Book? book = books.FirstOrDefault(book => book.Id == id);
+            if (book == null) return NotFound("Book not found.");
+            books.Remove(book);
             return NoContent();
         }
     }
