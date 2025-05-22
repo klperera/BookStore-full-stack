@@ -7,15 +7,5 @@
     "C:\\Users\\Heshani\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.5\\microsoft.aspnetcore.openapi.9.0.5.nupkg.sha512",
     "C:\\Users\\Heshani\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json.",
-      "projectPath": "d:\\Projects\\BookStore-full-stack\\BookStore.API\\BookStore.API.csproj",
-      "warningLevel": 1,
-      "filePath": "d:\\Projects\\BookStore-full-stack\\BookStore.API\\BookStore.API.csproj",
-      "targetGraphs": []
-    }
-  ]
+  "logs": []
 }
