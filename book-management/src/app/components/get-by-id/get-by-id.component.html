@@ -18,13 +18,14 @@
   
     <div *ngIf="book" class="mt-4 p-4 border rounded bg-gray-50">
       <h3 class="text-lg font-semibold mb-2">Book Details</h3>
+      <p><strong>ID:</strong> {{ book.id }}</p>
       <p><strong>Title:</strong> {{ book.title }}</p>
       <p><strong>Author:</strong> {{ book.author }}</p>
       <p><strong>ISBN:</strong> {{ book.isbn }}</p>
       <p><strong>Date:</strong> {{ book.publicationDate }}</p>
     </div>
   
-    <div *ngIf="errorMessage" class="text-red-600 mt-2">
+    <div *ngIf="errorMessage" class="flex text-red-600 mt-25 justify-center">
       {{ errorMessage }}
     </div>
   </div>

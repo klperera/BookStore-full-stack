@@ -3,7 +3,8 @@
   
     <table class="w-full border border-gray-300 shadow-md rounded-lg overflow-hidden">
       <thead>
-        <tr class="bg-gray-200 text-left">
+        <tr class="bg-gray-500 text-left">
+          <th class="p-3 font-semibold">ID</th>
           <th class="p-3 font-semibold">Title</th>
           <th class="p-3 font-semibold">Author</th>
           <th class="p-3 font-semibold">ISBN</th>
@@ -12,7 +13,8 @@
       </thead>
   
       <tbody>
-        <tr *ngFor="let book of books" class="border-t hover:bg-gray-50 transition">
+        <tr *ngFor="let book of books" class="border-t bg-gray-50 transition">
+          <td class="p-3">{{ book.id }}</td>
           <td class="p-3">{{ book.title }}</td>
           <td class="p-3">{{ book.author }}</td>
           <td class="p-3">{{ book.isbn }}</td>
