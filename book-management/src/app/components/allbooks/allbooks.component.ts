@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Book } from '../../models/book.model';
 import { BookService } from '../../services/book.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-allbooks',
@@ -22,12 +23,4 @@ export class AllbooksComponent implements OnInit {
       console.log(this.books);
     });
   }
-
-  editBook(arg0: any) {
-  }
-  deleteBook(arg0: any) {
-    
-  }
-    
-
 }

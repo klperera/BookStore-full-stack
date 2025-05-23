@@ -8,7 +8,6 @@
           <th class="p-3 font-semibold">Author</th>
           <th class="p-3 font-semibold">ISBN</th>
           <th class="p-3 font-semibold">Date</th>
-          <th class="p-3 font-semibold">Actions</th>
         </tr>
       </thead>
   
@@ -17,21 +16,7 @@
           <td class="p-3">{{ book.title }}</td>
           <td class="p-3">{{ book.author }}</td>
           <td class="p-3">{{ book.isbn }}</td>
-          <td class="p-3">{{ book.publicationDate }}</td>
-          <td class="p-3 flex gap-2">
-            <button
-              class="px-3 py-1 bg-yellow-400 hover:bg-yellow-500 text-white text-sm rounded"
-              (click)="editBook(book.id)"
-            >
-              Edit
-            </button>
-            <button
-              class="px-3 py-1 bg-red-500 hover:bg-red-600 text-white text-sm rounded"
-              (click)="deleteBook(book.id)"
-            >
-              Delete
-            </button>
-          </td>
+          <td class="p-3">{{ book.publicationDate }}</td>   
         </tr>
       </tbody>
     </table>
