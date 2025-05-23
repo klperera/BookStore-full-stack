@@ -1,0 +1,32 @@
+<div class="p-10">
+    <h2 class="text-4xl font-bold text-white mb-10 text-center">Search Book by ID</h2>
+  
+    <div class="flex justify-center">
+      <input
+        type="number"
+        [(ngModel)]="bookId"
+        placeholder="Enter book ID"
+        class="border-none bg-amber-50 p-3 rounded w-100"
+      />
+      <button
+        (click)="searchBook()"
+        class="ml-5 px-10 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+      >
+        Search
+      </button>
+    </div>
+  
+    <div *ngIf="book" class="mt-4 p-4 border rounded bg-gray-50">
+      <h3 class="text-lg font-semibold mb-2">Book Details</h3>
+      <p><strong>ID:</strong> {{ book.id }}</p>
+      <p><strong>Title:</strong> {{ book.title }}</p>
+      <p><strong>Author:</strong> {{ book.author }}</p>
+      <p><strong>ISBN:</strong> {{ book.isbn }}</p>
+      <p><strong>Date:</strong> {{ book.publicationDate }}</p>
+    </div>
+  
+    <div *ngIf="errorMessage" class="flex text-red-600 mt-25 justify-center">
+      {{ errorMessage }}
+    </div>
+  </div>
+  

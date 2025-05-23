@@ -1,0 +1,23 @@
+<app-nav-bar (optionSelected)="onOptionChange($event)"/>
+
+@if (activeOption == "GetAllBooks") {
+    <app-allbooks />
+}
+@else if (activeOption == "GetById") {
+    <app-get-by-id />
+}
+@else if (activeOption == "AddBook") {
+    <app-add-book />
+}
+@else if (activeOption == "UpdateBook") {
+    <app-update-book />
+}
+@else if (activeOption == "DeleteBook") {
+    <app-delete-book />
+}
+@else {
+  <div class="flex justify-center items-center h-screen">
+    <h1 class="text-4xl font-bold text-gray-800">Welcome to the Book Store Application</h1>
+  </div>
+}
+

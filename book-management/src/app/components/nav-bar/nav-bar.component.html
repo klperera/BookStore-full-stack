@@ -1,0 +1,29 @@
+<div class = "bg-gray-800 md:flex md:justify-between md:items-center md:px-4 md:py-3">
+    <div class="flex items-center justify-between cursor-pointer">
+        <svg enable-background="new 0 0 32 32" id="Stock_cut" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="w-15 h-15 ml-4" fill="#ffffff" width="32px" height="32px">
+            <desc/><g>
+            <polyline fill="none" points="1,25 1,29 31,29    31,25  " stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+            <path d="M16,29v-2   c0-1.105-0.895-2-2-2H1V5h13c1.105,0,2,0.895,2,2V29z" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+            <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" x1="4" x2="13" y1="13" y2="13"/>
+            <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" x1="4" x2="13" y1="9" y2="9"/>
+            <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" x1="4" x2="13" y1="17" y2="17"/>
+            <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" x1="4" x2="13" y1="21" y2="21"/>
+            <path d="M16,29v-2   c0-1.105,0.895-2,2-2h13V5H18c-1.105,0-2,0.895-2,2V29z" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+            <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" x1="28" x2="19" y1="13" y2="13"/>
+            <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" x1="28" x2="19" y1="9" y2="9"/>
+            <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" x1="28" x2="19" y1="17" y2="17"/>
+            <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" x1="28" x2="19" y1="21" y2="21"/>
+        </g>
+        </svg>
+        <h1 class="ml-6 text-white text-2xl">Book Store Application</h1>
+    </div>
+    
+    
+    <nav class="px-2 pt-2 pb-4 md:flex md:p-0 max-h[120px] text-lg">
+        <a (click)="selectOption('GetAllBooks')" class="block px-5 py-2 mx-2 text-gray-100 hover:bg-amber-500 cursor-pointer">Home</a>
+        <a (click)="selectOption('GetById')" class="block px-5 py-2 mx-2 text-gray-100 hover:bg-amber-500 cursor-pointer">Search for a Book </a>
+        <a (click)="selectOption('AddBook')" class="block px-5 py-2 mx-2 text-gray-100 hover:bg-amber-500 cursor-pointer">Add Book</a>        
+        <a (click)="selectOption('UpdateBook')" class="block px-5 py-2 mx-2 text-gray-100 hover:bg-amber-500 cursor-pointer">Update a Book</a>        
+        <a (click)="selectOption('DeleteBook')" class="block px-5 py-2 mx-2 text-gray-100 hover:bg-amber-500 cursor-pointer">Delete a Book</a>        
+    </nav>
+</div> 
