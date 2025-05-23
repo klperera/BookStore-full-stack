@@ -10,15 +10,7 @@ namespace BookStore.API.Controllers
     [ApiController]
     public class BookController : ControllerBase
     {
-        private static List<Book> books = [
-            new Book(
-                Id: 1,
-                Title: "hii",
-                Author: "kalpa",
-                Isbn: "123",
-                date: new DateOnly(2025,01,01)
-            ),
-        ];
+        private static List<Book> books = [];
 
         [HttpGet]
         public IActionResult GetAll()
