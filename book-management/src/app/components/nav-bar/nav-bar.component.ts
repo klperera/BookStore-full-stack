@@ -1,7 +1,6 @@
 import { NgClass } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Book } from '../../models/book.model';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { HomepageComponent } from '../homepage/homepage.component';
 
 @Component({
   selector: 'app-nav-bar',
@@ -12,11 +11,13 @@ import { Book } from '../../models/book.model';
 })
 export class NavBarComponent{
 
-  constructor(private router:Router) {}
+  constructor() {}
 
-  RouteTo = (method: string) => {
-    console.log(`Routing to ${method}`); // Debugging line
-    this.router.navigateByUrl(`${method}`);
+  @Output() optionSelected = new EventEmitter<string>();
+
+  selectOption(option: string) {
+    console.log('Selected option in nav-bar:', option);
+    this.optionSelected.emit(option);
   }
 
 }
