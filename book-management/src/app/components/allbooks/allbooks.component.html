@@ -1,0 +1,39 @@
+<div class="p-10">
+    <h2 class="text-4xl font-bold text-white mb-10 text-center">Books List</h2>
+  
+    <table class="w-full border border-gray-300 shadow-md rounded-lg overflow-hidden">
+      <thead>
+        <tr class="bg-gray-200 text-left">
+          <th class="p-3 font-semibold">Title</th>
+          <th class="p-3 font-semibold">Author</th>
+          <th class="p-3 font-semibold">ISBN</th>
+          <th class="p-3 font-semibold">Date</th>
+          <th class="p-3 font-semibold">Actions</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr *ngFor="let book of books" class="border-t hover:bg-gray-50 transition">
+          <td class="p-3">{{ book.title }}</td>
+          <td class="p-3">{{ book.author }}</td>
+          <td class="p-3">{{ book.isbn }}</td>
+          <td class="p-3">{{ book.publicationDate }}</td>
+          <td class="p-3 flex gap-2">
+            <button
+              class="px-3 py-1 bg-yellow-400 hover:bg-yellow-500 text-white text-sm rounded"
+              (click)="editBook(book.id)"
+            >
+              Edit
+            </button>
+            <button
+              class="px-3 py-1 bg-red-500 hover:bg-red-600 text-white text-sm rounded"
+              (click)="deleteBook(book.id)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
